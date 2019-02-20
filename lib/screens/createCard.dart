@@ -3,6 +3,8 @@ import "package:flutter/material.dart";
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
 
+import "./landing.dart";
+
 class CreateCard extends StatefulWidget {
   @override
   CreateCardState createState() {
@@ -12,7 +14,7 @@ class CreateCard extends StatefulWidget {
 
 class CreateCardState extends State<CreateCard> {
   File _image;
-  Map card = {
+  Map userCard = {
     "name": "",
     "title": "",
     "status": "",
@@ -25,7 +27,7 @@ class CreateCardState extends State<CreateCard> {
 
     setState(() {
       _image = image;
-      card["avatar"] = image.toString();
+      userCard["avatar"] = image.toString();
     });
   }
 
@@ -43,7 +45,7 @@ class CreateCardState extends State<CreateCard> {
                 child: TextField(
                   onChanged: (String value) {
                     setState(() {
-                      card["name"] = value;
+                      userCard["name"] = value;
                     });
                   },
                   decoration: InputDecoration(
@@ -59,7 +61,7 @@ class CreateCardState extends State<CreateCard> {
                 child: TextField(
                   onChanged: (String value) {
                     setState(() {
-                      card["title"] = value;
+                      userCard["title"] = value;
                     });
                   },
                   decoration: InputDecoration(
@@ -75,7 +77,7 @@ class CreateCardState extends State<CreateCard> {
                 child: TextField(
                   onChanged: (String value) {
                     setState(() {
-                      card["status"] = value;
+                      userCard["status"] = value;
                     });
                   },
                   decoration: InputDecoration(
@@ -91,7 +93,7 @@ class CreateCardState extends State<CreateCard> {
                 child: TextField(
                   onChanged: (String value) {
                     setState(() {
-                      card["linkedIn"] = value;
+                      userCard["linkedIn"] = value;
                     });
                   },
                   decoration: InputDecoration(
@@ -107,8 +109,7 @@ class CreateCardState extends State<CreateCard> {
                       ? <Widget>[
                           Text(
                             "Choose Avatar from camera roll",
-                            style:
-                                TextStyle(fontFamily: "Saira", fontSize: 22),
+                            style: TextStyle(fontFamily: "Saira", fontSize: 22),
                           ),
                           SizedBox(height: 10),
                           Container(
@@ -138,16 +139,18 @@ class CreateCardState extends State<CreateCard> {
                               elevation: 8,
                               child: Text("Choose different photo",
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15)),
+                                      color: Colors.white, fontSize: 15)),
                               onPressed: getImage,
                             ),
                           ),
                           Container(
                               child: RaisedButton(
-                                elevation: 8,
+                            elevation: 8,
                             onPressed: () {
-                              Navigator.push(context, )
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => Landing(userCard)),
+                              );
                             },
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50.0)),

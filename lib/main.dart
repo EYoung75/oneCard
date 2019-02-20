@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           routes: {
             "/": (BuildContext context) => AuthPage(),
-            "/landing": (BuildContext context) => Landing(),
+            // "/landing": (BuildContext context) => Landing(),
             "/createCard": (BuildContext context) => CreateCard()
           },
     );
