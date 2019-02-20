@@ -7,6 +7,7 @@ class Landing extends StatelessWidget {
       appBar: AppBar(
         title: Text("oneCard"),
       ),
+      body: Container()
     );
   }
 }

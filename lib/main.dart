@@ -3,6 +3,7 @@ import "package:flutter/rendering.dart";
 
 import "./screens/auth.dart";
 import "./screens/landing.dart";
+import "./screens/createCard.dart";
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           routes: {
             "/": (BuildContext context) => AuthPage(),
-            "/landing": (BuildContext context) => Landing()
+            "/landing": (BuildContext context) => Landing(),
+            "/createCard": (BuildContext context) => CreateCard()
           },
     );
   }
