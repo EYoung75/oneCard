@@ -14,7 +14,7 @@ class CreateCard extends StatefulWidget {
 
 class CreateCardState extends State<CreateCard> {
   File _image;
-  Map userCard = {
+  var userCard = {
     "name": "",
     "title": "",
     "status": "",
@@ -27,7 +27,7 @@ class CreateCardState extends State<CreateCard> {
 
     setState(() {
       _image = image;
-      userCard["avatar"] = image.toString();
+      userCard["avatar"] = _image.toString();
     });
   }
 

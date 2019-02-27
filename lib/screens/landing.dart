@@ -45,7 +45,7 @@ class VirtualCard extends StatelessWidget {
             elevation: 30,
             child: Column(
               children: <Widget>[
-                Image.network("https://lh3.googleusercontent.com/sPkRT6Y_BjWLDdlAzI8klY1JcvZp7tbcNO01yCh5ShgXdh-8XFvugkISmIsHj1PHaJ40s-3R4zfVVTTk0GFBxFBgfY7qvunbgev26CFpXwPtdu7zjq4pR68xO6vHhMcfrOq-HIaKpg=w2400"),
+                Image.file(userCard["avatar"]),
                 Text(userCard["name"]),
                 Text(userCard["title"]),
                 Text(userCard["status"])
