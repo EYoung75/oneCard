@@ -13,7 +13,7 @@ class CreateCard extends StatefulWidget {
 }
 
 class CreateCardState extends State<CreateCard> {
-  File _image; 
+  File _image;  
   var userCard = {
     "name": "",
     "title": "",
